@@ -8,7 +8,7 @@ namespace Exam_OOP.Models
         public int Mark { get; set; }
         public string Body { get; set; }
 
-        protected Question(string header, int mark, string body)
+        public Question(string header, int mark, string body)
         {
             Header = header;
             Mark = mark;
