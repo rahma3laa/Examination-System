@@ -10,7 +10,10 @@
             AnswerId = answerId;
             AnswerText = answerText;
         }
-
+        public override string ToString()
+        {
+            return $"{AnswerId}. {AnswerText}";
+        }
 
     }
 }

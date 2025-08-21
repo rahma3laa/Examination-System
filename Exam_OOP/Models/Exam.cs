@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Exam_OOP.Models
 {
-    internal abstract class Exam
+    internal abstract class Exam : ICloneable, IComparable<Exam>
     {
         public int NoOfQuestion { get; set; }
 
@@ -19,8 +19,17 @@ namespace Exam_OOP.Models
             TimeOfExam = timeOfExam;
             Questions = questions;
         }
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
 
-       
+        public int CompareTo(Exam other)
+        {
+            if (other == null) return 1;
+            return this.NoOfQuestion.CompareTo(other.NoOfQuestion);
+        }
+
         public abstract void ShowExam();
 
         public override string ToString()
